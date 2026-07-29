@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import EquationsFunctionSpacesEvolutionEquationsCanonicalLaneLean.AdmissibleClass
+import EquationsFunctionSpacesEvolutionEquationsCanonicalLaneLean.BridgeLemmas
+import EquationsFunctionSpacesEvolutionEquationsCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace EquationsFunctionSpacesEvolutionEquationsCanonicalLaneLean
+
+def ConstrainedEvolutionEquationsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_evolution_equations_endgame (A : AdmissibleClass) : ConstrainedEvolutionEquationsClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end EquationsFunctionSpacesEvolutionEquationsCanonicalLaneLean
+end HautevilleHouse
